@@ -39,7 +39,10 @@ export const App = () => {
       <table className="table">
         <tbody>
           {goods.map(good => (
-            <tr data-cy="Good">
+            <tr
+              data-cy="Good"
+              className={value === good ? 'has-background-success-light' : ''}
+            >
               <td>
                 {value === good ? (
                   <button
