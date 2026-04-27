@@ -16,7 +16,7 @@ export const goods = [
 ];
 
 export const App = () => {
-  const [selectedGood, setselectedGood] = useState('Jam');
+  const [selectedGood, setSelectedGood] = useState('Jam');
 
   return (
     <main className="section container">
@@ -29,7 +29,7 @@ export const App = () => {
           {selectedGood} is selected
           <button
             data-cy="ClearButton"
-            onClick={() => setselectedGood('')}
+            onClick={() => setSelectedGood('')}
             type="button"
             className="delete ml-3"
           />
@@ -40,6 +40,7 @@ export const App = () => {
         <tbody>
           {goods.map(good => (
             <tr
+              key={good}
               data-cy="Good"
               className={
                 selectedGood === good ? 'has-background-success-light' : ''
@@ -50,7 +51,7 @@ export const App = () => {
                   <button
                     data-cy="RemoveButton"
                     type="button"
-                    onClick={() => setselectedGood('')}
+                    onClick={() => setSelectedGood('')}
                     className="button is-info"
                   >
                     -
@@ -59,7 +60,7 @@ export const App = () => {
                   <button
                     data-cy="AddButton"
                     type="button"
-                    onClick={() => setselectedGood(good)}
+                    onClick={() => setSelectedGood(good)}
                     className="button"
                   >
                     +
